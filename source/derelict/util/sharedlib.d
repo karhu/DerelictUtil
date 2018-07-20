@@ -27,6 +27,9 @@ DEALINGS IN THE SOFTWARE.
 */
 module derelict.util.sharedlib;
 
+version(D_BetterC) {}
+else {
+
 import std.string;
 
 import derelict.util.exception,
@@ -251,3 +254,5 @@ private:
     SharedLibHandle _hlib;
     private MissingSymbolCallbackDg _onMissingSym;
 }
+
+} // version D_BetterC

@@ -27,6 +27,9 @@ DEALINGS IN THE SOFTWARE.
 */
 module derelict.util.loader;
 
+version(D_BetterC) {}
+else {
+
 import std.array,
        std.string;
 
@@ -391,3 +394,5 @@ private:
     string _libNames;
     SharedLib _lib;
 }
+
+} // version D_BetterC

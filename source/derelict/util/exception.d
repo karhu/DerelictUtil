@@ -27,6 +27,9 @@ DEALINGS IN THE SOFTWARE.
 */
 module derelict.util.exception;
 
+version(D_BetterC) {}
+else {
+
 /++
  Base class for all exceptions thrown by Derelict packages.
 +/
@@ -132,3 +135,5 @@ alias MissingSymbolCallbackDg = ShouldThrow delegate(string symbolName);
 
 /// Convenient alias to use as a return value.
 alias MissingSymbolCallback = MissingSymbolCallbackDg;
+
+} // version D_BetterC
